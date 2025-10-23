@@ -1,0 +1,35 @@
+﻿Título do Projeto: Previsão Espaço-Temporal do Risco de Ignição de Incêndios no Bioma Cerrado Utilizando Arquiteturas de Deep Learning
+
+1. Introdução e Justificativa
+O Cerrado, a savana mais biodiversa do mundo, é um bioma adaptado ao fogo, onde incêndios naturais desempenham um papel ecológico. No entanto, a frequência e a intensidade dos incêndios têm aumentado drasticamente devido a fatores antropogênicos, como a expansão agrícola e práticas de manejo inadequadas, e às mudanças climáticas, que intensificam os períodos de seca. Essa nova dinâmica de fogo representa uma séria ameaça à biodiversidade, aos recursos hídricos e à segurança das populações locais.  
+Os sistemas tradicionais de previsão de risco de incêndio, embora importantes, frequentemente lutam para capturar a complexa interação não linear entre clima, vegetação, topografia e atividade humana. A emergência do Deep Learning (DL) oferece um novo paradigma, permitindo que modelos aprendam esses padrões complexos diretamente a partir de grandes volumes de dados de sensoriamento remoto e meteorológicos. No Brasil, embora existam avanços significativos no mapeamento de áreas queimadas e na detecção de focos de calor com IA , há uma lacuna notável na aplicação de técnicas de ponta para a previsão do risco de ignição — ou seja, prever onde e quando um incêndio tem maior probabilidade de começar.  
+Este projeto visa preencher essa lacuna, desenvolvendo um modelo de Deep Learning para a previsão do risco de ignição de incêndios especificamente para o bioma Cerrado, contribuindo com uma ferramenta potencialmente valiosa para a gestão ambiental e a prevenção de desastres.
+
+2. Declaração do Problema
+O desafio central é prever a ocorrência de novas ignições de incêndios no Cerrado com antecedência, baseando-se em um conjunto de variáveis ambientais e antropogênicas. O projeto abordará a tarefa de previsão de risco de ignição, que se distingue de outras tarefas como a previsão de propagação de fogo ou o mapeamento de áreas já queimadas. O resultado esperado é um mapa dinâmico que indique a probabilidade de um incêndio começar em uma determinada área e período de tempo.
+
+3. Questões de Pesquisa e Hipóteses
+O projeto será guiado pelas seguintes questões e hipóteses:
+* Questão de Pesquisa 1: É possível desenvolver um modelo de Deep Learning espaço-temporal que preveja com alta acurácia os locais de ignição de incêndios no Cerrado com 1 a 7 dias de antecedência?
+   * Hipótese 1: Uma arquitetura que integra informações espaciais e temporais (como a ConvLSTM) apresentará um desempenho superior (medido por métricas como F1-Score e AUC) na previsão de ignições em comparação com modelos que consideram apenas a dimensão espacial (CNN) ou apenas a temporal (LSTM), devido à sua capacidade de capturar a dinâmica das condições pré-fogo.
+* Questão de Pesquisa 2: Quais são os principais fatores preditivos (drivers) que contribuem para o risco de ignição de incêndios no Cerrado, de acordo com o modelo desenvolvido?
+   * Hipótese 2: Através da aplicação de técnicas de IA Explicável (XAI), espera-se que variáveis de curto prazo, como baixa umidade relativa e alta temperatura, e variáveis antropogênicas, como a proximidade de estradas e áreas agrícolas, sejam identificadas como os fatores de maior influência para o risco de ignição no bioma.  
+
+4. Objetivos
+* Objetivo Geral:
+   1. Desenvolver, treinar e validar um modelo de Deep Learning para a previsão diária do risco de ignição de incêndios florestais no bioma Cerrado.
+* Objetivos Específicos:
+   1. Construir um dataset geoespacial e temporal abrangente para o Cerrado, integrando dados de satélite (e.g., Landsat, MODIS), dados meteorológicos (e.g., ERA5), topografia e variáveis de atividade humana (e.g., estradas, uso do solo) para um período histórico definido.
+   2. Implementar uma arquitetura de rede neural estado da arte (foco principal: ConvLSTM) capaz de processar as dimensões espacial e temporal dos dados de entrada.
+   3. Avaliar rigorosamente o desempenho do modelo utilizando métricas adequadas para problemas com dados desbalanceados (e.g., F1-Score, AUC, Precision, Recall), comparando-o com modelos de base.
+   4. Aplicar uma metodologia de IA Explicável (XAI), como o SHAP, para interpretar as previsões do modelo e quantificar a importância de cada variável preditiva.
+
+5. Escopo e Delimitações do Projeto
+* Escopo Geográfico: O estudo será focado exclusivamente no bioma Cerrado brasileiro. Dependendo da disponibilidade de dados e capacidade computacional, uma sub-região representativa (e.g., a região do MATOPIBA) poderá ser selecionada para os experimentos iniciais.  
+* Escopo Temporal: O modelo será treinado com dados históricos de um período de aproximadamente 10 anos e terá como objetivo realizar previsões de curto prazo (horizonte de 1 a 7 dias).
+* Escopo da Tarefa: O projeto se concentra estritamente na previsão da probabilidade de ignição. Não serão modelados o comportamento, a intensidade ou a propagação do fogo após a ignição.
+* Escopo Técnico: A arquitetura primária a ser investigada será a ConvLSTM, por sua capacidade de modelar dinâmicas espaço-temporais. Outras arquiteturas poderão ser usadas como benchmarks.  
+
+6. Contribuições Esperadas
+* Científica: Este trabalho contribuirá para o estado da arte ao aplicar uma metodologia avançada de Deep Learning para a previsão de incêndios no Brasil, uma área menos explorada em comparação com a detecção e o mapeamento. A análise com XAI fornecerá insights quantitativos sobre os gatilhos de incêndio específicos do Cerrado.
+* Prática e Social: O modelo desenvolvido servirá como uma prova de conceito para um sistema de alerta precoce, com potencial para auxiliar órgãos ambientais (como INPE e ICMBio) e o Corpo de Bombeiros no planejamento de ações preventivas, alocação de recursos e fiscalização em áreas de alto risco, podendo mitigar os impactos socioambientais dos incêndios no bioma.

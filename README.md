@@ -4,6 +4,7 @@ Descrição
 Este repositório contém o código e a documentação do projeto de artigo acadêmico para a disciplina de Projeto Aplicad-Metodologia Ciêntifíca no curso de Ciência da Computação. O objetivo é desenvolver um modelo de Deep Learning,utilizando uma arquitetura espaço-temporal (ConvLSTM), para prever o risco de ignição de incêndios no bioma Cerrado brasileiro.
 
 Equipe
+
 [Guilherme Vieira]
 
 [Igor Marques]
@@ -26,7 +27,7 @@ Estrutura do Repositório
 /results: Resultados gerados, como mapas de risco, gráficos e métricas de avaliação.
 
 Como Executar o Projeto
-**Clone o repositório: git clone https://github.com/Apelaun/previsao-incendios-cerrado  
+**Clone o repositório: git clone https://github.com/ggav23/previsao-incendios-cerrado  
 
 Configure o ambiente: O ambiente principal de desenvolvimento é o Google Colab. As dependências estão listadas no arquivo requirements.txt.
 
